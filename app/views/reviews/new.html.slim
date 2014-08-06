@@ -1,2 +1,4 @@
-h1 Reviews#new
-p Find me in app/views/reviews/new.html.slim
+= link_to "Back to movie", movie_path(@movie)
+br
+h2 Write a review of #{@movie.title}
+= render 'new_review_form'
