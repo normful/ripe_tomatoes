@@ -5,11 +5,12 @@ hr
   = link_to image_tag(movie.poster_image_url), movie_path(movie)
   h2 = link_to movie.title, movie_path(movie)
   h3 = movie.release_date
-  h4
-    | Director
+  h5>
+    | Director: 
     = movie.director
-    |
+    br
+    | Runtime: 
     = movie.runtime_in_minutes
-    | minutes
+    |  minutes
   p = movie.description
   hr
