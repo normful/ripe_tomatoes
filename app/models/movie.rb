@@ -14,9 +14,7 @@ class Movie < ActiveRecord::Base
   validates :description,
     presence: true
 
-  validates :poster_image_url,
-    presence: true
-
+  mount_uploader :poster_image_url, MoviePosterUploader
 
   validates :release_date,
     presence: true
