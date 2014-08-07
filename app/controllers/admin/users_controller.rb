@@ -1,5 +1,8 @@
 class Admin::UsersController < ApplicationController
+
   include UserParams
+
+  before_filter :restrict_access_to_admins
 
   def index
     @users = User.all

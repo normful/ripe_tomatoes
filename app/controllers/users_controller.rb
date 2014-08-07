@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   include UserParams
 
   def new
@@ -15,4 +16,5 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
 end
