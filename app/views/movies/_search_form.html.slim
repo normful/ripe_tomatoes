@@ -1,4 +1,8 @@
 = form_tag("/movies", method: "get") do
   = label_tag(:title, "Title:")
   = text_field_tag(:title)
+  br
+  = label_tag(:diector, "Director:")
+  = text_field_tag(:director)
+  br
   = submit_tag("Search")
