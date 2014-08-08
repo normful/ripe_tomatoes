@@ -6,7 +6,7 @@ h2
 h3
   = link_to "edit", edit_movie_path(@movie)
   |  
-  = link_to "delete", movie_path(@movie), method: :delete, confirm: "You sure"
+  = link_to "delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }
 h3 = formatted_date(@movie.release_date)
 h4
   | Director: 
