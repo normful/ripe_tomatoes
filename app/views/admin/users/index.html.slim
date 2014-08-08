@@ -2,11 +2,10 @@ h1 Users
 table
   thead
     tr
-      th First name
-      th Last Name
+      th Name
   tbody
   - @users.each do |user|
     tr
-      td = user.firstname
-      td = user.lastname
+      td
+        = link_to "#{user.full_name}", admin_user_path(user)
 = paginate @users
