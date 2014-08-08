@@ -1,9 +1,6 @@
 = form_tag("/movies", method: "get") do
-  = label_tag(:title, "Title:")
-  = text_field_tag(:title)
-  br
-  = label_tag(:director, "Director:")
-  = text_field_tag(:director)
+  = label_tag(:query, "Search:")
+  = text_field_tag(:query)
   br
   = select_tag(:duration, options_for_select([['Under 90 minutes', 'short'], ['Between 90 and 120 minutes', 'medium'], ['Over 120 minutes', 'long']], 2))
   br

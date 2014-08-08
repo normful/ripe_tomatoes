@@ -1,9 +1,8 @@
 class MoviesController < ApplicationController
 
   def index
-    title = "%#{params[:title]}%"
-    director = "%#{params[:director]}%"
-    @movies = Movie.where("title LIKE ? AND director LIKE ?", title, director)
+    query = "%#{params[:query]}%"
+    @movies = Movie.where("title LIKE ? OR director LIKE ?", query, query)
     @movies = @movies.send("#{params[:duration]}") if params[:duration]
   end
 
