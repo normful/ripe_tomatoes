@@ -16,4 +16,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @reviews = Review.joins(:user).where(user: @user)
+  end
+
 end

@@ -3,3 +3,4 @@ h1
   |  (#{ link_to "Edit", edit_admin_user_path(@user)})
 p ID: #{@user.id}
 p Admin: #{@user.admin? ? "yes" : "no"}
+= render partial: '/users/review', as: 'review', collection: @reviews

@@ -1,0 +1,9 @@
+p
+  = review.movie.title
+  |  &#8211; 
+  = review.rating_out_of_ten
+  |  / 10: 
+  = review.text
+  |  (
+  = formatted_date(review.created_at)
+  | )
