@@ -4,11 +4,7 @@ class MoviesController < ApplicationController
     title = "%#{params[:title]}%"
     director = "%#{params[:director]}%"
     @movies = Movie.where("title LIKE ? AND director LIKE ?", title, director)
-    case params[:duration]
-    when "short" then @movies = @movies.where('runtime_in_minutes < 90')
-    when "medium" then @movies = @movies.where('runtime_in_minutes BETWEEN 90 AND 120 ')
-    when "long" then @movies = @movies.where('runtime_in_minutes > 120')
-    end
+    @movies = @movies.send("#{params[:duration]}") if params[:duration]
   end
 
   def show

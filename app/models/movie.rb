@@ -21,6 +21,10 @@ class Movie < ActiveRecord::Base
 
   validate :release_date_is_in_the_future
 
+  scope :short, -> { where('runtime_in_minutes < 90') }
+  scope :medium, -> { where('runtime_in_minutes BETWEEN 90 AND 120 ') }
+  scope :long, -> { where('runtime_in_minutes > 120') }
+
   private
 
   def release_date_is_in_the_future
