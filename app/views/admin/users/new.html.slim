@@ -1,3 +1,6 @@
 h1 Create a new user
 = form_for [:admin, @user] do |f|
+  div
+    = f.label "Set as admin?"
+    = f.check_box :admin
   = render partial: '/users/new_user_form', locals: {f: f}
